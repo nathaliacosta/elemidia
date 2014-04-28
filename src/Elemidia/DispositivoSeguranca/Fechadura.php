@@ -1,13 +1,31 @@
 <?php
 
+namespace Elemidia\DispositivoSeguranca;
+
+use Elemidia\DispositivoSeguranca\Chave\ChaveInterface;
+use Exception;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+
 class Fechadura implements SegurancaInterface
 {
     private static $codigo = 1234;
     private $estaTrancada;
+    /**
+     *
+     * @var Logger
+     */
+    private $logger;
 
     public function __construct()
     {
         $this->estaTrancada = true;
+
+        // create a log channel
+        $log = new Logger('elemidia');
+        $log->pushHandler(new StreamHandler('log/elemidia.log', Logger::DEBUG));
+
+        $this->logger = $log;
     }
 
     public function trancar(ChaveInterface $chave)
@@ -29,7 +47,8 @@ class Fechadura implements SegurancaInterface
         if ($this->checarSenha($chave)) {
             if ($this->estaTrancada === true) {
                 $this->estaTrancada = false;
-                echo "A porta foi destrancada... Fechadura de Ferro" . PHP_EOL;
+                $this->logger->addDebug('A porta foi destrancada... Fechadura de Ferro');
+                #echo "A porta foi destrancada... Fechadura de Ferro" . PHP_EOL;
 
                 return true;
             }

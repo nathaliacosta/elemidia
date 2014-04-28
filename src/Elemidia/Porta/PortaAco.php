@@ -1,5 +1,10 @@
 <?php
 
+namespace Elemidia\Porta;
+
+use Elemidia\DispositivoSeguranca\Chave\ChaveInterface;
+use Exception;
+
 class PortaAco extends AbstractPorta
 {
     public function abrir()
@@ -12,12 +17,12 @@ class PortaAco extends AbstractPorta
         return true;
     }
 
-    public function destrancar(\ChaveInterface $chave)
+    public function destrancar(ChaveInterface $chave)
     {
         throw new Exception('Essa porta não destranca');
     }
 
-    public function trancar(\ChaveInterface $chave)
+    public function trancar(ChaveInterface $chave)
     {
         throw new Exception('Essa porta não tranca');
     }

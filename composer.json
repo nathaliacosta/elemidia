@@ -1,0 +1,16 @@
+{
+    "name": "vendor/elemidia",
+    "description": "Descrição do projeto elemidia.",
+    "authors": [
+        {
+            "name": "Italo",
+            "email": "italo@missaoweb.com.br"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "1.9.*@dev"
+    },
+    "autoload": {
+        "psr-0": {"Elemidia\\": "src/"}
+    }
+}

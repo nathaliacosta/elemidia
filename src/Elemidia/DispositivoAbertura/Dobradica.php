@@ -1,5 +1,9 @@
 <?php
 
+namespace Elemidia\DispositivoAbertura;
+
+use Exception;
+
 class Dobradica implements AberturaInterface
 {
     private $estaAberta;

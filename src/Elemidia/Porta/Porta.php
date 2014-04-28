@@ -1,5 +1,14 @@
 <?php
 
+namespace Elemidia\Porta;
+
+use Elemidia\DispositivoAbertura\AberturaInterface;
+use Elemidia\DispositivoAbertura\Dobradica;
+use Elemidia\DispositivoSeguranca\Chave\ChaveInterface;
+use Elemidia\DispositivoSeguranca\Fechadura;
+use Elemidia\DispositivoSeguranca\SegurancaInterface;
+use Elemidia\Porta\AbstractPorta;
+
 class Porta extends AbstractPorta implements SegurancaInterface
 {
     /**
@@ -30,12 +39,12 @@ class Porta extends AbstractPorta implements SegurancaInterface
         return $this->dobradica->fechar();
     }
 
-    public function destrancar(\ChaveInterface $chave)
+    public function destrancar(ChaveInterface $chave)
     {
         return $this->fechadura->destrancar($chave);
     }
 
-    public function trancar(\ChaveInterface $chave)
+    public function trancar(ChaveInterface $chave)
     {
         return $this->fechadura->trancar($chave);
     }
