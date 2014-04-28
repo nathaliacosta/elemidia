@@ -1,0 +1,29 @@
+## Portas ##
+
+# Casos de Uso
+1. Abrir a porta
+2. Fechar a porta
+3. Trancar a porta
+4. Destrancar a porta
+
+C1
+1. Abrir a porta
+    1.1 Para abrir a porta, ela deve estar
+    destrancada
+    1.2 Para abrir a porta, ela deve estar fechada
+
+C2
+1. Fechar a porta
+    1.1 Para fechar a porta, ela deve estar aberta
+
+C3
+1. Trancar a porta
+    1.1 A porta deve estar fechada
+    1.2 A porta deve estar destrancada
+    1.3 E a chave deve ser compativel
+
+C4
+1. Destrancar a porta
+    1.1 A porta deve estar fechada
+    1.2 A porta deve estar trancada
+    1.3 E a chave deve ser compativel
